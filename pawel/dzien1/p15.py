@@ -1,3 +1,3 @@
-a="KursPWN "
+a="KursPWN\n"
 
 print(3*a)
