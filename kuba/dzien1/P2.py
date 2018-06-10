@@ -3,4 +3,3 @@ b="abc"
 c=0
 
 print(a, b, c, sep="\t")
-
