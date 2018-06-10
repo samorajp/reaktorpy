@@ -12,7 +12,5 @@ print("3" + imie, nazwisko, data_ur, stanowsiko, str(placa), sep=" - " )
 print(("4" + imie, nazwisko, data_ur, stanowsiko, str(placa))*10, sep=" - " )
 
 a = '999'
-print('a')
+print(a)
 print(print(wyswietl*10), sep="\n")
-
-print(print(wyswietl, sep="\n")*10)
