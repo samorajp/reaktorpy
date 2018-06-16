@@ -4,9 +4,9 @@ tekst = input("Wpisz liczbę szukaną w zbiorze: ")
 
 if tekst.isdigit():
     if int(tekst) in lista:
-        print ("1")
+        print ("Liczba w zbiorze")
     else:
-        print("2")
+        print("Brak liczby w zbiorze")
 else:
     print("Wpisz liczbę ! ")
 
