@@ -1,0 +1,1 @@
+print("Zaczynamy dzień drugi!")
