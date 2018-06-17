@@ -1,3 +1,13 @@
+def hist(x):
+    i = 0
+    summa = 0
+    print('lp | produkt | ilosc | kwota')
+    for id2, produkt2, ilosc2, kwota2 in hisoria:
+        i +=1
+        summa += kwota2
+        print(i, produkt2, ilosc2, kwota2)
+    print('\nsuma za zakupy: %.2f PLN' % summa)
+
 sklep = {
     1: ['Arbuz', 3.50, 10],
     2: ['Banan', 2.99, 5],
@@ -41,14 +51,16 @@ while True:
         break
 
 #print('suma za zaupy: %s' % suma)
-print(hisoria)
-i = 0
-summa = 0
-for id2, produkt2, ilosc2, kwota2 in hisoria:
-    i +=1
-    summa += kwota2
-    print(i, produkt2, ilosc2, kwota2)
-    print('suma za zakupy: %.2f' % summa)
+#print(hisoria)
+# i = 0
+# summa = 0
+# for id2, produkt2, ilosc2, kwota2 in hisoria:
+#     i +=1
+#     summa += kwota2
+#     print(i, produkt2, ilosc2, kwota2)
+#     print('suma za zakupy: %.2f PLN' % summa)
+
+hist(hisoria)
 
 #
 #
