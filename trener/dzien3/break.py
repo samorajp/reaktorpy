@@ -1,13 +1,12 @@
 import random
-sekret = random.randint(1, 1000)
-jeszcze_zgadujemy = True
+sekret = random.randint(1, 6)
 proba = 1
 
-while jeszcze_zgadujemy and proba <= 10:
+while True:
     wpisana = int(input("Twój strzał: "))
     if wpisana == sekret:
         print("WYGRAŁEŚ W PRÓBIE", proba)
-        jeszcze_zgadujemy = False
+        break
     else:
         print("NIE TRAFIŁEŚ")
         if wpisana < sekret:
@@ -15,4 +14,8 @@ while jeszcze_zgadujemy and proba <= 10:
         else:
             print("Za duża")
         proba += 1
+        if proba > 3:
+            break
+
+
 print(sekret)
