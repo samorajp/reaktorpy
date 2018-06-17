@@ -1,5 +1,5 @@
 import random
-sekret = random.randint(1,4)
+sekret = random.randint(1,1000)
 #
 # wpisana = int(input("Twój strzał: "))
 # if wpisana == sekret:
@@ -9,7 +9,7 @@ sekret = random.randint(1,4)
 
 jeszcze_zgadujemy = True
 proba = 1
-while jeszcze_zgadujemy and proba <=3:
+while jeszcze_zgadujemy and proba <=10:
     wpisana = int(input("Twój strzał: "))
     if wpisana == sekret:
         print ("WYGRAŁEŚ W PRÓBIE", proba)
@@ -22,5 +22,5 @@ while jeszcze_zgadujemy and proba <=3:
             print("Za mała!")
         else:
             print("Za duża")
-
+print(sekret)
 
