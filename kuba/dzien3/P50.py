@@ -38,3 +38,4 @@ print("Za całe zakupy - do zapłaty %.2f zł." % suma)
 
 # print(sklep[id_produktu])
 # print(ilość, ile_mamy_na_stanie)
+
