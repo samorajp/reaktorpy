@@ -1,13 +1,14 @@
-loginy = {'admin': 'admin',
+konta = {'admin': 'admin',
           'user': 'user'
 }
-print('logowania')
-user = input('podaj login')
-passw = input('podaj hasło')
+print('logowanie')
+login = input('podaj login\n')
+passw = input('podaj hasło\n')
 
-if user == 'admin' and passw == loginy[user]:
+if login == 'admin' and passw == konta[login]:
     print('witaj adminie')
-elif user == 'user' and passw == loginy[user]:
+elif login == 'user' and passw == konta[login]:
     print('witaj użytkowniku')
 else:
     print('błędne hasło')
+#if login in konta:
