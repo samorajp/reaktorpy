@@ -16,7 +16,10 @@ while jeszcze_zgadujemy and proba<=3:
         jeszcze_zgadujemy= False
     else:
         print("NIE TRAFIŁEŚ.")
-        if #PRACA DOMOWA TU WPISAc
+        if int(wpisana) > sekret:
+                print("Podaj niższą wartość")
+        else:
+                print ("Podaj wyższą wartość")#PRACA DOMOWA TU W
         proba = proba+1
 
 
