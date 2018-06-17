@@ -1,15 +1,16 @@
 import random
 
 sekret = random.randint(1, 10)
-jeszcze_zgadujemy = True
+#jeszcze_zgadujemy = True
 proba = 1
 
 
-while jeszcze_zgadujemy and proba <=3:
+while True and proba <=3:
     wpisana = int(input('Twój strzał: \n'))
     if wpisana == sekret:
         print('Wygrałeś w probie', proba)
-        jeszcze_zgadujemy = False
+        break
+        #jeszcze_zgadujemy = False
     else:
         print('Nie trafiles')
         proba = proba +1
