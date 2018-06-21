@@ -10,6 +10,7 @@ l6 = random.randint(1,49)
 lista = [l1, l2, l3, l4, l5, l6]
 
 print(set(lista))
-print("\n"*2)
+print("\n" * 2)
 print(set([l1, l2, l3, l4, l5, l6]))
 print(set())
+
