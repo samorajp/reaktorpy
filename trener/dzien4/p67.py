@@ -1,3 +1,7 @@
+"""Nasz super moduł do robienia dziekanatów"""
+
+import random
+
 class Student:
     def __init__(self, imie, nazwisko, nr_indeksu):
         self.imie = imie
@@ -13,6 +17,7 @@ class Student:
         # print(self.imie, self.nazwisko, self.nr_indeksu)
 
 class Dziekanat:
+    """Info o dziekanaie"""
     def __init__(self, imie_kierownika):
         self.imie_kierownika = imie_kierownika
         self.lista_studentow = []
@@ -30,7 +35,7 @@ class Dziekanat:
                 break
 
         print("Będę usuwał")
-        print(do_usuniecia.dane_do_raportu())
+        do_usuniecia.dane_do_raportu()
         self.lista_studentow.remove(do_usuniecia)
 
 
@@ -42,21 +47,17 @@ class Dziekanat:
 
         print("Sporządziła Pani %s" % self.imie_kierownika)
 
-    # def dodawanie_studenta_dla_pani_basi(self):
-    #     imie = input("Podaj imie: ")
-    #     nazwisko = input("Podaj nazwisko: ")
+    def dodawanie_studenta_dla_pani_basi(self):
+        imie = input("Podaj imie: ")
+        nazwisko = input("Podaj nazwisko: ")
+        nr_indeksu = input("Podaj nr indeksu: ")
+        nowy_student = Student(imie, nazwisko, nr_indeksu)
+        self.dodaj_studenta(nowy_student)
 
-
-student1 = Student("Adam", "Abacki", "123462")
-student1.przedstaw_sie()
-student2 = Student("Balbuna", "Babacka", "121111")
-
-dziekanat = Dziekanat("Basia")
-
-dziekanat.dodaj_studenta(student1)
-dziekanat.dodaj_studenta(student2)
-dziekanat.pokaz_studentow()
-
-dziekanat.usun_studenta("121111")
-# dziekanat.dodawanie_studenta_dla_pani_basi()
+#
+#
+# dziekanat = Dziekanat("Basia")
+# while True:
+#     dziekanat.dodawanie_studenta_dla_pani_basi()
+#     dziekanat.pokaz_studentow()
 

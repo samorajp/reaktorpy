@@ -1,0 +1,2 @@
+class Dziekanat:
+    pass
