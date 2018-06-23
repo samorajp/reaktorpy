@@ -4,6 +4,10 @@ j = 0
 while True:
     print("Podaj liczbę: ")
     minsup = int(input())
+
+
+
+
     if minsup in range(-1000,1000):
         print("Ile wartości zliczyć ?")
         j =int(input())
