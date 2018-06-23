@@ -28,3 +28,6 @@ print(zegar())
 
 while True:
     print(zegar())
+
+
+sorted()
