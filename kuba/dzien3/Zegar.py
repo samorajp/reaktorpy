@@ -21,3 +21,5 @@ def zegar (godzina="Brak",minuta="Brak"):
 
 print(zegar())
 print(zegar(16,46) == ((0,14),(7,46)))
+
+
