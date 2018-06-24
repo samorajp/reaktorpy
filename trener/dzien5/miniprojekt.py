@@ -3,6 +3,37 @@ import pymysql
 conn = pymysql.connect("localhost", "root", "asddsa", "projekt_python")
 c = conn.cursor()
 
+def ekran_logowania():
+    login = input("Podaj login: ")
+    haslo = input("Podaj haslo: ")
+
+    for uzytkownik in uzytkownicy:
+        login_w_bazie = uzytkownik[0]
+        haslo_w_bazie = uzytkownik[1]
+        typ_konta = uzytkownik[2]
+
+        if login_w_bazie == login and haslo_w_bazie == haslo:
+            print("SUPER")
+            if typ_konta == "A":
+                print("Witaj administratorze")
+            else:
+                print("Witaj użytkowniku")
+            return login, typ_konta
+
+    # użytkownik wpisał złe dane
+    # bo return nigdy nie nastąpił
+    return None, None
+
+
+def ekran_logowania_do_skutku():
+    while True:
+        login, typ_konta = ekran_logowania()
+        if login != None:
+            return login, typ_konta
+        else:
+            print("Próba nieudana")
+
+
 def wyloguj_sie():
     print("Wylogowano")
     exit()
@@ -46,6 +77,8 @@ def menu():
     menu()
 
 
+
+ekran_logowania_do_skutku()
 menu()
 exit()
 
@@ -60,35 +93,7 @@ exit()
 c.execute("select * from logowanie")
 uzytkownicy = c.fetchall()
 
-def ekran_logowania():
-    login = input("Podaj login: ")
-    haslo = input("Podaj haslo: ")
 
-    for uzytkownik in uzytkownicy:
-        login_w_bazie = uzytkownik[0]
-        haslo_w_bazie = uzytkownik[1]
-        typ_konta = uzytkownik[2]
-
-        if login_w_bazie == login and haslo_w_bazie == haslo:
-            print("SUPER")
-            if typ_konta == "A":
-                print("Witaj administratorze")
-            else:
-                print("Witaj użytkowniku")
-            return login, typ_konta
-
-    # użytkownik wpisał złe dane
-    # bo return nigdy nie nastąpił
-    return None, None
-
-
-def ekran_logowania_do_skutku():
-    while True:
-        login, typ_konta = ekran_logowania()
-        if login != None:
-            return login, typ_konta
-        else:
-            print("Próba nieudana")
 
 
 
