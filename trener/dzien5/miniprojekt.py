@@ -37,6 +37,7 @@ def ekran_logowania_do_skutku():
             print("Próba nieudana")
 
 
+
 def wyloguj_sie():
     print("Wylogowano")
     exit()
@@ -55,15 +56,28 @@ def zobacz_oferte():
 def zloz_zamowienie():
     print("Składamy zamówienie")
 
-def historia_zamowien():
+def historia_zamowien(login):
     print("Historia zamówień poniżej.")
+    c.execute("select * from zamowienia where login = %s", login)
+    pozycje = c.fetchall()
 
-def menu():
-    print("## MENU ##")
+    for pozycja in pozycje:
+        print(pozycja)
+
+def dodaj_produkt(typ_konta):
+    if typ_konta == "A":
+        ...
+
+
+
+
+def menu(login, typ_konta):
+    print("## MENU, witaj %s ##" % login)
     print("1 - Wyloguj się")
     print("2 - Zobacz ofertę")
     print("3 - Złóż zamówienie")
     print("4 - Historia zamówień")
+    print("5 - D")
 
     akcja = input("Co chcesz zrobić? ")
 
@@ -74,14 +88,25 @@ def menu():
     elif akcja == "3":
         zloz_zamowienie()
     elif akcja == "4":
-        historia_zamowien()
+        historia_zamowien(login)
     else:
         print("Nie wiem o co Ci chodzi.")
-    menu()
+    menu(login, typ_konta)
 
 
 
-ekran_logowania_do_skutku()
+login, typ_konta = ekran_logowania_do_skutku()
+menu(login, typ_konta)
+
+
+
+
+
+
+
+
+
+
 menu()
 exit()
 
