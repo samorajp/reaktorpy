@@ -1,11 +1,22 @@
 import pymysql
 
+conn = pymysql.connect("localhost", "root", "asddsa", "projekt_python")
+c = conn.cursor()
+
 def wyloguj_sie():
     print("Wylogowano")
     exit()
 
 def zobacz_oferte():
-    print("Pokazuje ofertę")
+    print()
+    print("### Pokazuje ofertę  ###")
+    c.execute("select * from produkty")
+    oferta = c.fetchall()
+
+
+    for produkt in oferta:
+        print("%10s  %5s" % (produkt[1], produkt[2]))
+    print()
 
 def zloz_zamowienie():
     print("Składamy zamówienie")
@@ -14,6 +25,7 @@ def historia_zamowien():
     print("Historia zamówień poniżej.")
 
 def menu():
+    print("## MENU ##")
     print("1 - Wyloguj się")
     print("2 - Zobacz ofertę")
     print("3 - Złóż zamówienie")
@@ -44,8 +56,7 @@ exit()
 
 
 
-conn = pymysql.connect("localhost", "root", "asddsa", "projekt_python")
-c = conn.cursor()
+
 c.execute("select * from logowanie")
 uzytkownicy = c.fetchall()
 
