@@ -4,6 +4,9 @@ conn = pymysql.connect("localhost", "root", "asddsa", "projekt_python")
 c = conn.cursor()
 
 def ekran_logowania():
+    c.execute("select * from logowanie")
+    uzytkownicy = c.fetchall()
+
     login = input("Podaj login: ")
     haslo = input("Podaj haslo: ")
 
@@ -90,8 +93,6 @@ exit()
 
 
 
-c.execute("select * from logowanie")
-uzytkownicy = c.fetchall()
 
 
 
