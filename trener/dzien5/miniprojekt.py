@@ -58,7 +58,14 @@ def zloz_zamowienie():
 
 def historia_zamowien(login):
     print("Historia zamówień poniżej.")
-    c.execute("select * from zamowienia where login = %s", login)
+
+    zapytanie = """
+        select zamowienia.kod_zamowienia,  produkty.nazwa, zamowienia.ilosc, produkty.cena
+        from zamowienia, produkty
+        where login = %s and zamowienia.id_produktu = produkty.id_produktu
+    """
+
+    c.execute(zapytanie, login)
     pozycje = c.fetchall()
 
     for pozycja in pozycje:
