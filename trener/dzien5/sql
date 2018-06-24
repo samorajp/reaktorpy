@@ -1,7 +1,24 @@
-CREATE TABLE IF NOT EXISTS `produkty` (
-  `id_produktu` INT NOT NULL AUTO_INCREMENT,
-  `nazwa` VARCHAR(45) NOT NULL,
-  `cena` FLOAT NOT NULL,
+CREATE TABLE `zamowienia` (
+  `id_poz` int(11) NOT NULL AUTO_INCREMENT,
+  `login` varchar(45) NOT NULL,
+  `kod_zamowienia` varchar(45) NOT NULL,
+  `id_produktu` int(11) NOT NULL,
+  `ilosc` float NOT NULL,
+  PRIMARY KEY (`id_poz`),
+  UNIQUE KEY `id_poz_UNIQUE` (`id_poz`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `produkty` (
+  `id_produktu` int(11) NOT NULL AUTO_INCREMENT,
+  `nazwa` varchar(45) NOT NULL,
+  `cena` float NOT NULL,
   PRIMARY KEY (`id_produktu`),
-  UNIQUE INDEX `id_produktu_UNIQUE` (`id_produktu` ASC))
-ENGINE = InnoDB
+  UNIQUE KEY `id_produktu_UNIQUE` (`id_produktu`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `logowanie` (
+  `login` varchar(30) NOT NULL,
+  `haslo` varchar(45) NOT NULL,
+  `typ_konta` varchar(45) NOT NULL,
+  PRIMARY KEY (`login`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
