@@ -1,0 +1,6 @@
+Marci,Kostek,13
+Janina,Chrab¹szcz13
+Yenefer,WiedŸmiñska,1
+Gerald,WiedŸmiñski,1
+Adam,Pie,1
+a,a,1
